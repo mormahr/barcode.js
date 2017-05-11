@@ -153,6 +153,6 @@ function map() {
 populate()
 map()
 
-export function encode39(text) {
+export function encodeCode39(text) {
 	return Mapping["*"].concat(NARROW_SPACE).concat(text.split("").map(it => Mapping[it].concat(NARROW_SPACE)).reduce((a, b) => a.concat(b), [])).concat(Mapping["*"])
 }

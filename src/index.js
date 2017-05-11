@@ -12,8 +12,8 @@ export {
 }
 
 import {
-	encode39,
+	encodeCode39,
 } from "./Code39"
 export {
-	encode39,
+	encodeCode39,
 }
