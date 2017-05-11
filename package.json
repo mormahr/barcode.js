@@ -7,11 +7,13 @@
   "author": "Moritz Mahringer <me@moritzmahringer.de>",
   "license": "MIT",
   "scripts": {
-    "build": "rollup -c"
+    "build": "rollup -c",
+    "test": "yarn run flow"
   },
   "devDependencies": {
     "babel-preset-env": "^1.4.0",
     "babel-preset-flow": "^6.23.0",
+    "flow-bin": "^0.46.0",
     "rollup": "^0.41.6",
     "rollup-plugin-babel": "^2.7.1"
   }
