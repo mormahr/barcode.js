@@ -5,5 +5,9 @@
   "main": "index.js",
   "repository": "https://github.com/mormahr/barcode.js.git",
   "author": "Moritz Mahringer <me@moritzmahringer.de>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "babel-preset-env": "^1.4.0",
+    "babel-preset-flow": "^6.23.0"
+  }
 }
