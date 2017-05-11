@@ -6,8 +6,13 @@
   "repository": "https://github.com/mormahr/barcode.js.git",
   "author": "Moritz Mahringer <me@moritzmahringer.de>",
   "license": "MIT",
+  "scripts": {
+    "build": "rollup -c"
+  },
   "devDependencies": {
     "babel-preset-env": "^1.4.0",
-    "babel-preset-flow": "^6.23.0"
+    "babel-preset-flow": "^6.23.0",
+    "rollup": "^0.41.6",
+    "rollup-plugin-babel": "^2.7.1"
   }
 }

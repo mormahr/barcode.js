@@ -4,7 +4,8 @@
       "targets": {
         "browsers": ["> 2%, last 2 versions", "safari >= 7"],
         "node": 4
-      }
+      },
+      "modules": false
     }],
     "flow"
   ]
