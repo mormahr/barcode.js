@@ -156,16 +156,13 @@ function map() {
 		}
 		reduction.push(Bars[bar][Bars[bar].length - 1])
 
-		Mapping[key] = reduction
+		Mapping[key] = reduction.join("")
 	}
 }
 
 populate()
 map()
 
-export function encodeCode39(text: string): string[] {
-	return Mapping["*"]
-		.concat(NARROW_SPACE)
-		.concat(text.split("").map(it => Mapping[it].concat(NARROW_SPACE)).reduce((a, b) => a.concat(b), []))
-		.concat(Mapping["*"])
+export function encodeCode39(text: string): string {
+	return Mapping["*"] + NARROW_SPACE + text.split("").map(it => Mapping[it] + NARROW_SPACE).join("") + Mapping["*"]
 }
