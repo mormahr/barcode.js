@@ -1,3 +1,4 @@
+// @flow
 import {
 	WIDE_BAR,
 	NARROW_BAR,
@@ -153,6 +154,6 @@ function map() {
 populate()
 map()
 
-export function encodeCode39(text) {
+export function encodeCode39(text: string): string[] {
 	return Mapping["*"].concat(NARROW_SPACE).concat(text.split("").map(it => Mapping[it].concat(NARROW_SPACE)).reduce((a, b) => a.concat(b), [])).concat(Mapping["*"])
 }
