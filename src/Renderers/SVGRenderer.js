@@ -33,5 +33,5 @@ export function renderBarcodeToSVG(input: string): string {
 		}
 	}
 
-	return `<svg viewBox="0 0 ${x} 1">${svg}</svg>`
+	return `<svg viewBox="0 0 ${x} 1" preserveAspectRatio="none">${svg}</svg>`
 }
