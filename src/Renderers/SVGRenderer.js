@@ -30,5 +30,5 @@ export function renderBarcodeToSVG(input: string, height: number, baseWidth: num
 		}
 	}
 
-	return `<svg height="${height}" width="${x}">${svg}</svg>`
+	return `<svg viewBox="0 0 ${x} ${height}">${svg}</svg>`
 }
