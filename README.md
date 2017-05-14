@@ -1,6 +1,9 @@
 # Barcode.js
 ![Logo](assets/logo.svg)
 
+[![Build Status](https://travis-ci.org/mormahr/barcode.js.svg?branch=master)](https://travis-ci.org/mormahr/barcode.js)
+[![npm version](https://badge.fury.io/js/barcodejs.svg)](https://www.npmjs.com/package/barcodejs)
+
 Encode strings into an intermediate representation and render them to different output formats.
 
 The primary focus of this project is to be **fast** and have a **low footprint**, while being **reliable**.
