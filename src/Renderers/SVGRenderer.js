@@ -8,7 +8,7 @@ export function rect(x: number, wide: boolean, filled: boolean): string {
 	return `<rect x="${x}" y="0" width="${wide ? WIDE_WIDTH : NARROW_WIDTH}" height="1" fill="${filled ? "black" : "white"}"/>`
 }
 
-export function renderBarcodeToSVG(input: string, {width, height}: {width?: number, height?: number} = {}): string {
+export function renderBarcodeToSVG(input: string, { width, height }: { width?: number, height?: number } = {}): string {
 	let svg = ""
 	let x = 0
 
@@ -33,10 +33,7 @@ export function renderBarcodeToSVG(input: string, {width, height}: {width?: numb
 		}
 	}
 
-	let options = [
-		`viewBox="0 0 ${x} 1"`,
-		`preserveAspectRatio="none"`,
-	]
+	let options = [`viewBox="0 0 ${x} 1"`, `preserveAspectRatio="none"`]
 	if (width) {
 		options.push(`width="${width}"`)
 	}
