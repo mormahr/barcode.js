@@ -1,0 +1,83 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`encodeCode39 Mapping matches the snapshot for ' ' 1`] = `"NwWnNnWnN"`;
+
+exports[`encodeCode39 Mapping matches the snapshot for '*' 1`] = `"NwNnWnWnN"`;
+
+exports[`encodeCode39 Mapping matches the snapshot for '.' 1`] = `"WwNnNnWnN"`;
+
+exports[`encodeCode39 Mapping matches the snapshot for '-' 1`] = `"NwNnNnWnW"`;
+
+exports[`encodeCode39 Mapping matches the snapshot for '0' 1`] = `"NnNwWnWnN"`;
+
+exports[`encodeCode39 Mapping matches the snapshot for '1' 1`] = `"WnNwNnNnW"`;
+
+exports[`encodeCode39 Mapping matches the snapshot for '2' 1`] = `"NnWwNnNnW"`;
+
+exports[`encodeCode39 Mapping matches the snapshot for '3' 1`] = `"WnWwNnNnN"`;
+
+exports[`encodeCode39 Mapping matches the snapshot for '4' 1`] = `"NnNwWnNnW"`;
+
+exports[`encodeCode39 Mapping matches the snapshot for '5' 1`] = `"WnNwWnNnN"`;
+
+exports[`encodeCode39 Mapping matches the snapshot for '6' 1`] = `"NnWwWnNnN"`;
+
+exports[`encodeCode39 Mapping matches the snapshot for '7' 1`] = `"NnNwNnWnW"`;
+
+exports[`encodeCode39 Mapping matches the snapshot for '8' 1`] = `"WnNwNnWnN"`;
+
+exports[`encodeCode39 Mapping matches the snapshot for '9' 1`] = `"NnWwNnWnN"`;
+
+exports[`encodeCode39 Mapping matches the snapshot for 'A' 1`] = `"WnNnNwNnW"`;
+
+exports[`encodeCode39 Mapping matches the snapshot for 'B' 1`] = `"NnWnNwNnW"`;
+
+exports[`encodeCode39 Mapping matches the snapshot for 'C' 1`] = `"WnWnNwNnN"`;
+
+exports[`encodeCode39 Mapping matches the snapshot for 'D' 1`] = `"NnNnWwNnW"`;
+
+exports[`encodeCode39 Mapping matches the snapshot for 'E' 1`] = `"WnNnWwNnN"`;
+
+exports[`encodeCode39 Mapping matches the snapshot for 'F' 1`] = `"NnWnWwNnN"`;
+
+exports[`encodeCode39 Mapping matches the snapshot for 'G' 1`] = `"NnNnNwWnW"`;
+
+exports[`encodeCode39 Mapping matches the snapshot for 'H' 1`] = `"WnNnNwWnN"`;
+
+exports[`encodeCode39 Mapping matches the snapshot for 'I' 1`] = `"NnWnNwWnN"`;
+
+exports[`encodeCode39 Mapping matches the snapshot for 'J' 1`] = `"NnNnWwWnN"`;
+
+exports[`encodeCode39 Mapping matches the snapshot for 'K' 1`] = `"WnNnNnNwW"`;
+
+exports[`encodeCode39 Mapping matches the snapshot for 'L' 1`] = `"NnWnNnNwW"`;
+
+exports[`encodeCode39 Mapping matches the snapshot for 'M' 1`] = `"WnWnNnNwN"`;
+
+exports[`encodeCode39 Mapping matches the snapshot for 'N' 1`] = `"NnNnWnNwW"`;
+
+exports[`encodeCode39 Mapping matches the snapshot for 'O' 1`] = `"WnNnWnNwN"`;
+
+exports[`encodeCode39 Mapping matches the snapshot for 'P' 1`] = `"NnWnWnNwN"`;
+
+exports[`encodeCode39 Mapping matches the snapshot for 'Q' 1`] = `"NnNnNnWwW"`;
+
+exports[`encodeCode39 Mapping matches the snapshot for 'R' 1`] = `"WnNnNnWwN"`;
+
+exports[`encodeCode39 Mapping matches the snapshot for 'S' 1`] = `"NnWnNnWwN"`;
+
+exports[`encodeCode39 Mapping matches the snapshot for 'T' 1`] = `"NnNnWnWwN"`;
+
+exports[`encodeCode39 Mapping matches the snapshot for 'U' 1`] = `"WwNnNnNnW"`;
+
+exports[`encodeCode39 Mapping matches the snapshot for 'V' 1`] = `"NwWnNnNnW"`;
+
+exports[`encodeCode39 Mapping matches the snapshot for 'W' 1`] = `"WwWnNnNnN"`;
+
+exports[`encodeCode39 Mapping matches the snapshot for 'X' 1`] = `"NwNnWnNnW"`;
+
+exports[`encodeCode39 Mapping matches the snapshot for 'Y' 1`] = `"WwNnWnNnN"`;
+
+exports[`encodeCode39 Mapping matches the snapshot for 'Z' 1`] = `"NwWnWnNnN"`;
+
+exports[`encodeCode39 matches the snapshot for the full alphabet 1`] = `"NwNnWnWnNnNwWnNnWnNnNwNnNnWnWnWwNnNnWnNnNnNwWnWnNnWnNwNnNnWnNnWwNnNnWnWnWwNnNnNnNnNwWnNnWnWnNwWnNnNnNnWwWnNnNnNnNwNnWnWnWnNwNnWnNnNnWwNnWnNnWnNnNwNnWnNnWnNwNnWnWnWnNwNnNnNnNnWwNnWnWnNnWwNnNnNnWnWwNnNnNnNnNwWnWnWnNnNwWnNnNnWnNwWnNnNnNnWwWnNnWnNnNnNwWnNnWnNnNwWnWnWnNnNwNnNnNnWnNwWnWnNnWnNwNnNnWnWnNwNnNnNnNnWwWnWnNnNnWwNnNnWnNnWwNnNnNnWnWwNnWwNnNnNnWnNwWnNnNnWnWwWnNnNnNnNwNnWnNnWnWwNnWnNnNnNwWnWnNnNnNwNnWnWnN"`;
