@@ -172,6 +172,7 @@ export function encodeCode39(text: string, fallbackChar: string = "_"): string {
 		Mapping["*"] +
 		NARROW_SPACE +
 		text
+			.toUpperCase()
 			.split("")
 			.map(it => (Mapping[it] ? Mapping[it] : Mapping[fallbackChar]))
 			.map(it => it + NARROW_SPACE)
