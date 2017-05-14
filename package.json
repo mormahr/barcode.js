@@ -2,7 +2,7 @@
   "name": "barcode.js",
   "version": "0.1.0",
   "description": "Fast barcode generator for javascript.",
-  "main": "index.js",
+  "main": "dist/barcode.js",
   "repository": "https://github.com/mormahr/barcode.js.git",
   "author": "Moritz Mahringer <me@moritzmahringer.de>",
   "license": "MIT",
