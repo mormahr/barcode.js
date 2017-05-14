@@ -32,6 +32,11 @@ describe("encodeCode39", function () {
 		expect(code).toMatchSnapshot()
 	})
 
+	it("uppercases input strings", function () {
+		const code = encodeCode39("a")
+		expect(code).not.toEqual(expect.stringContaining(Mapping["-"]))
+	})
+
 	describe("Mapping", function () {
 		it("has 39 + 1 codes", function () {
 			expect(Object.keys(Mapping).length).toEqual(40)
