@@ -163,11 +163,19 @@ function map() {
 populate()
 map()
 
-export function encodeCode39(text: string): string {
-	return Mapping["*"]
-		+ NARROW_SPACE
-		+ text.split("").map(it => {
-			return Mapping[it] + NARROW_SPACE
-		}).join("")
-		+ Mapping["*"]
+export function encodeCode39(text: string, fallbackChar: string = "_"): string {
+	if (!Mapping.hasOwnProperty(fallbackChar)) {
+		fallbackChar = "_"
+	}
+
+	return (
+		Mapping["*"] +
+		NARROW_SPACE +
+		text
+			.split("")
+			.map(it => (Mapping[it] ? Mapping[it] : Mapping[fallbackChar]))
+			.map(it => it + NARROW_SPACE)
+			.join("") +
+		Mapping["*"]
+	)
 }
