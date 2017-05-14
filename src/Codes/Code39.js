@@ -164,5 +164,10 @@ populate()
 map()
 
 export function encodeCode39(text: string): string {
-	return Mapping["*"] + NARROW_SPACE + text.split("").map(it => Mapping[it] + NARROW_SPACE).join("") + Mapping["*"]
+	return Mapping["*"]
+		+ NARROW_SPACE
+		+ text.split("").map(it => {
+			return Mapping[it] + NARROW_SPACE
+		}).join("")
+		+ Mapping["*"]
 }
