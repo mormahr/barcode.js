@@ -1,5 +1,5 @@
 {
-  "name": "barcode.js",
+  "name": "barcodejs",
   "version": "0.1.0",
   "description": "Fast barcode generator for javascript.",
   "main": "dist/barcode.js",
