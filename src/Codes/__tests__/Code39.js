@@ -37,6 +37,16 @@ describe("encodeCode39", function () {
 		expect(code).not.toEqual(expect.stringContaining(Mapping["-"]))
 	})
 
+	it("replaces out of range chars", function () {
+		const code = encodeCode39("_")
+		expect(code.substr(10,9)).toEqual(Mapping["-"])
+	})
+
+	it("replaces out of range chars with custom char", function () {
+		const code = encodeCode39("_", " ")
+		expect(code.substr(10,9)).toEqual(Mapping[" "])
+	})
+
 	describe("Mapping", function () {
 		it("has 39 + 1 codes", function () {
 			expect(Object.keys(Mapping).length).toEqual(40)
