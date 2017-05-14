@@ -6,3 +6,6 @@ export { encodeCode39 }
 
 import { renderBarcodeToHTML, generateCSS } from "./Renderers/HTMLRenderer"
 export { renderBarcodeToHTML, generateCSS }
+
+import { renderBarcodeToSVG } from "./Renderers/SVGRenderer"
+export { renderBarcodeToSVG }
