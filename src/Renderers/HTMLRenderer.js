@@ -1,5 +1,5 @@
 // @flow
-import { NARROW_SPACE, WIDE_SPACE, NARROW_BAR, WIDE_BAR } from "./Characters"
+import { NARROW_SPACE, WIDE_SPACE, NARROW_BAR, WIDE_BAR } from "../Core/Characters"
 
 export function renderBarcodeToHTML(input: string, prefix: string = "bcjs"): string {
 	let html = ""

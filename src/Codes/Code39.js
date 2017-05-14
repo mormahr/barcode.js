@@ -1,5 +1,5 @@
 // @flow
-import { WIDE_BAR, NARROW_BAR, WIDE_SPACE, NARROW_SPACE } from "./Characters"
+import { WIDE_BAR, NARROW_BAR, WIDE_SPACE, NARROW_SPACE } from "../Core/Characters"
 
 // See https://en.wikipedia.org/wiki/Code_39
 const BaseMapping = {}
