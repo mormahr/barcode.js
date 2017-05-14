@@ -163,9 +163,9 @@ function map() {
 populate()
 map()
 
-export function encodeCode39(text: string, fallbackChar: string = "_"): string {
+export function encodeCode39(text: string, fallbackChar: string = "-"): string {
 	if (!Mapping.hasOwnProperty(fallbackChar)) {
-		fallbackChar = "_"
+		fallbackChar = "-"
 	}
 
 	return (
