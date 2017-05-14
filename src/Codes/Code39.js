@@ -2,8 +2,8 @@
 import { WIDE_BAR, NARROW_BAR, WIDE_SPACE, NARROW_SPACE } from "../Core/Characters"
 
 // See https://en.wikipedia.org/wiki/Code_39
+export const Mapping = {}
 const BaseMapping = {}
-const Mapping = {}
 const Bars = [
 	[
 		// 1
