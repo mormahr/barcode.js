@@ -1,5 +1,5 @@
 # Barcode.js
-![Logo](assets/logo.svg)
+![Logo](https://cdn.rawgit.com/mormahr/barcode.js/35fd6ead/assets/logo.svg)
 
 [![Build Status](https://travis-ci.org/mormahr/barcode.js.svg?branch=master)](https://travis-ci.org/mormahr/barcode.js)
 [![npm version](https://badge.fury.io/js/barcodejs.svg)](https://www.npmjs.com/package/barcodejs)
