@@ -163,6 +163,54 @@ function map() {
 populate()
 map()
 
+Mapping["+"] = [
+	NARROW_BAR,
+	WIDE_SPACE,
+	NARROW_BAR,
+	NARROW_SPACE,
+	NARROW_BAR,
+	WIDE_SPACE,
+	NARROW_BAR,
+	WIDE_SPACE,
+	NARROW_BAR,
+].join("")
+
+Mapping["/"] = [
+	NARROW_BAR,
+	WIDE_SPACE,
+	NARROW_BAR,
+	WIDE_SPACE,
+	NARROW_BAR,
+	NARROW_SPACE,
+	NARROW_BAR,
+	WIDE_SPACE,
+	NARROW_BAR,
+].join("")
+
+Mapping["$"] = [
+	NARROW_BAR,
+	WIDE_SPACE,
+	NARROW_BAR,
+	WIDE_SPACE,
+	NARROW_BAR,
+	WIDE_SPACE,
+	NARROW_BAR,
+	NARROW_SPACE,
+	NARROW_BAR,
+].join("")
+
+Mapping["%"] = [
+	NARROW_BAR,
+	NARROW_SPACE,
+	NARROW_BAR,
+	WIDE_SPACE,
+	NARROW_BAR,
+	WIDE_SPACE,
+	NARROW_BAR,
+	WIDE_SPACE,
+	NARROW_BAR,
+].join("")
+
 export function encodeCode39(text: string, fallbackChar: string = "-"): string {
 	if (!Mapping.hasOwnProperty(fallbackChar)) {
 		fallbackChar = "-"

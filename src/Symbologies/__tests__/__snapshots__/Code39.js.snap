@@ -2,9 +2,17 @@
 
 exports[`encodeCode39 Mapping matches the snapshot for ' ' 1`] = `"NwWnNnWnN"`;
 
+exports[`encodeCode39 Mapping matches the snapshot for '$' 1`] = `"NwNwNwNnN"`;
+
+exports[`encodeCode39 Mapping matches the snapshot for '%' 1`] = `"NnNwNwNwN"`;
+
 exports[`encodeCode39 Mapping matches the snapshot for '*' 1`] = `"NwNnWnWnN"`;
 
+exports[`encodeCode39 Mapping matches the snapshot for '+' 1`] = `"NwNnNwNwN"`;
+
 exports[`encodeCode39 Mapping matches the snapshot for '.' 1`] = `"WwNnNnWnN"`;
+
+exports[`encodeCode39 Mapping matches the snapshot for '/' 1`] = `"NwNwNnNwN"`;
 
 exports[`encodeCode39 Mapping matches the snapshot for '-' 1`] = `"NwNnNnWnW"`;
 
@@ -80,4 +88,4 @@ exports[`encodeCode39 Mapping matches the snapshot for 'Y' 1`] = `"WwNnWnNnN"`;
 
 exports[`encodeCode39 Mapping matches the snapshot for 'Z' 1`] = `"NwWnWnNnN"`;
 
-exports[`encodeCode39 matches the snapshot for the full alphabet 1`] = `"NwNnWnWnNnNwWnNnWnNnNwNnNnWnWnWwNnNnWnNnNnNwWnWnNnWnNwNnNnWnNnWwNnNnWnWnWwNnNnNnNnNwWnNnWnWnNwWnNnNnNnWwWnNnNnNnNwNnWnWnWnNwNnWnNnNnWwNnWnNnWnNnNwNnWnNnWnNwNnWnWnWnNwNnNnNnNnWwNnWnWnNnWwNnNnNnWnWwNnNnNnNnNwWnWnWnNnNwWnNnNnWnNwWnNnNnNnWwWnNnWnNnNnNwWnNnWnNnNwWnWnWnNnNwNnNnNnWnNwWnWnNnWnNwNnNnWnWnNwNnNnNnNnWwWnWnNnNnWwNnNnWnNnWwNnNnNnWnWwNnWwNnNnNnWnNwWnNnNnWnWwWnNnNnNnNwNnWnNnWnWwNnWnNnNnNwWnWnNnNnNwNnWnWnN"`;
+exports[`encodeCode39 matches the snapshot for the full alphabet 1`] = `"NwNnWnWnNnNwWnNnWnNnNwNwNwNnNnNnNwNwNwNnNwNnNwNwNnNwNnNnWnWnWwNnNnWnNnNwNwNnNwNnNnNwWnWnNnWnNwNnNnWnNnWwNnNnWnWnWwNnNnNnNnNwWnNnWnWnNwWnNnNnNnWwWnNnNnNnNwNnWnWnWnNwNnWnNnNnWwNnWnNnWnNnNwNnWnNnWnNwNnWnWnWnNwNnNnNnNnWwNnWnWnNnWwNnNnNnWnWwNnNnNnNnNwWnWnWnNnNwWnNnNnWnNwWnNnNnNnWwWnNnWnNnNnNwWnNnWnNnNwWnWnWnNnNwNnNnNnWnNwWnWnNnWnNwNnNnWnWnNwNnNnNnNnWwWnWnNnNnWwNnNnWnNnWwNnNnNnWnWwNnWwNnNnNnWnNwWnNnNnWnWwWnNnNnNnNwNnWnNnWnWwNnWnNnNnNwWnWnNnNnNwNnWnWnN"`;

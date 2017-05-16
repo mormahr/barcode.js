@@ -48,8 +48,8 @@ describe("encodeCode39", function () {
 	})
 
 	describe("Mapping", function () {
-		it("has 39 + 1 codes", function () {
-			expect(Object.keys(Mapping).length).toEqual(40)
+		it("has 44 codes", function () {
+			expect(Object.keys(Mapping).length).toEqual(44)
 		})
 
 		Object.keys(Mapping).map(char => {
