@@ -1,6 +1,6 @@
 {
   "name": "barcodejs",
-  "version": "0.1.0-alpha.1",
+  "version": "0.1.0-rc.1",
   "description": "Fast barcode generator for javascript.",
   "main": "dist/barcode.js",
   "repository": "https://github.com/mormahr/barcode.js.git",
