@@ -3,3 +3,12 @@ node_js:
   - "lts/argon"
   - "lts/boron"
   - "7"
+deploy:
+  provider: npm
+  email: me@moritzmahringer.de
+  api_key:
+    secure: i+YPnLxLqZFPpe8WYy8vnjzKZkzGKHweTJh7TYbIWEbEyjOZ5QyiAbDll7EZgYTLsyH0Rh+K2qnCih4iqfrmxEgqYnSlGYAQfpAAzSXBuq5E1jVj6/zP+vmnzsAfiUWDJpk7uSs1VPRsi0MYCWpPv1sNPpg4luKsyZXRstVq0HohC2o6fK3PmRy3zofkp+R2UJoFinGRHL9IGoi1UDC3hMgHuH+soAXREhacr7TbWCMq/sT83pPhsjsYGtA57Q+HUewOB1LD9o/Yw6oSHyGVtxxmack7VmglyOEF9zOBZwn4OUNCBaljHKx8hMMqV5kDtqLseSOohD0KM+UAXE6QIE53z9JpuoQX/0wl+vFmlcs4iaeCkWEcqYFICkNMfIPVarSuXSZyhxF7P4FMr3mTo4hkpcRZ8UYq9RnAlF9rieIeoNpAAz7OQ85rqpuBGzXUVEWK5cd3mygToYayqwzbQlrLcoxz8fbiWtcrFmmfqqR6LkGsozAOJoVDjs5MuEOW/XcbV2bLhKNojWdev7orlk1avTDH/8UiCPcBxrRLm4FXG7WPPtOai6SQEXjdpJIET866mgRBh8geDa3yqZ56Kcn4r4P9zujO/YQUea6qrMkxwEZd/0xdudffkl0ERcztWKFQPlWKpjFp9IqSNO/pnELYOOG97rrYCnS+qOH6HYI=
+  on:
+    tags: true
+    repo: mormahr/barcode.js
+    branch: master
