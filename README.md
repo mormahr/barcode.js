@@ -26,9 +26,9 @@ import {encodeCode39, renderBarcodeToSVG} from "barcodejs"
 // const {encodeCode39, renderBarcodeToSVG} = require("barcodejs")
 
 const svg = renderBarcodeToSVG(encodeCode39("HELLO WORLD"), {
-	// Optional
-	width: "100%",
-	height: "20mm",
+    // Optional
+    width: "100%",
+    height: "20mm",
 })
 
 console.log(svg)
