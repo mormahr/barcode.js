@@ -4,6 +4,11 @@
 [![Build Status](https://travis-ci.org/mormahr/barcode.js.svg?branch=master)](https://travis-ci.org/mormahr/barcode.js)
 [![npm version](https://badge.fury.io/js/barcodejs.svg)](https://www.npmjs.com/package/barcodejs)
 
+> ⚠️ **Currently not ready for production usage!**
+>
+> Although we use this in production, we do so in a controlled environment usage only text sources we completely control.
+> Expect APIs to change until this notice is removed. (We will however respect semantic versioning.)
+
 Encode strings into an intermediate representation and render them to different output formats.
 
 The primary focus of this project is to be **fast** and have a **low footprint**, while being **reliable**.
