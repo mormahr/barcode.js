@@ -8,7 +8,7 @@
   "license": "MIT",
   "scripts": {
     "build": "rollup -c",
-    "format": "prettier --write --trailing-comma all --print-width 120 --use-tabs --tab-width 4 --no-semi src/**/*.js",
+    "format": "prettier --write --trailing-comma all --print-width 120 --use-tabs --tab-width 4 --no-semi \"src/**/*.js\"",
     "prepublish": "yarn run build",
     "test": "yarn run flow && yarn run jest"
   },
