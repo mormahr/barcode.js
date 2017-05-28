@@ -33,7 +33,7 @@ export function renderBarcodeToSVG(input: string, { width, height }: { width?: n
 		}
 	}
 
-	let options = [`viewBox="0 0 ${x} 1"`, `preserveAspectRatio="none"`]
+	let options = [`xmlns="http://www.w3.org/2000/svg"`, `viewBox="0 0 ${x} 1"`, `preserveAspectRatio="none"`]
 	if (width) {
 		options.push(`width="${width}"`)
 	}
