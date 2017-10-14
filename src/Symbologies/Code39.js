@@ -1,5 +1,5 @@
 // @flow
-import type { Barcode } from "../Core/Barcode"
+import type { Barcode, TwoWidthBarcode } from "../Core/Barcode"
 import type { TwoWidthSymbologySymbol } from "../Core/Characters"
 import { NARROW_BAR, NARROW_SPACE, WIDE_BAR, WIDE_SPACE } from "../Core/Characters"
 
@@ -229,7 +229,7 @@ function _encodeContent(text: string, fallbackChar: string): TwoWidthSymbologySy
 	return flattened
 }
 
-export function encodeCode39(text: string, fallbackChar: string = "-"): Barcode<TwoWidthSymbologySymbol> {
+export function encodeCode39(text: string, fallbackChar: string = "-"): TwoWidthBarcode {
 	if (!Mapping.hasOwnProperty(fallbackChar)) {
 		fallbackChar = "-"
 	}
