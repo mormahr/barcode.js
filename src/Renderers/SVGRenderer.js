@@ -1,6 +1,6 @@
 // @flow
 import { NARROW_SPACE, WIDE_SPACE, NARROW_BAR, WIDE_BAR } from "../Core/Characters"
-import type { DiscreteSymbologySymbol } from "../Core/Characters"
+import type { TwoWidthSymbologySymbol } from "../Core/Characters"
 import type { Barcode } from "../Core/Barcode"
 
 const NARROW_WIDTH = 1
@@ -13,7 +13,7 @@ export function rect(x: number, wide: boolean, filled: boolean): string {
 }
 
 export function renderBarcodeToSVG(
-	input: Barcode<DiscreteSymbologySymbol>,
+	input: Barcode<TwoWidthSymbologySymbol>,
 	{ width, height }: { width?: number, height?: number } = {},
 ): string {
 	let svg = ""

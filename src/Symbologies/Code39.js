@@ -1,10 +1,10 @@
 // @flow
 import type { Barcode } from "../Core/Barcode"
-import type { DiscreteSymbologySymbol } from "../Core/Characters"
+import type { TwoWidthSymbologySymbol } from "../Core/Characters"
 import { NARROW_BAR, NARROW_SPACE, WIDE_BAR, WIDE_SPACE } from "../Core/Characters"
 
 // See https://en.wikipedia.org/wiki/Code_39
-export const Mapping: { [key: string]: DiscreteSymbologySymbol[] } = {}
+export const Mapping: { [key: string]: TwoWidthSymbologySymbol[] } = {}
 const BaseMapping = {}
 const Bars = [
 	[
@@ -213,29 +213,29 @@ Mapping["%"] = [
 	NARROW_BAR,
 ]
 
-function _encodeContent(text: string, fallbackChar: string): DiscreteSymbologySymbol[] {
-	const encodedCharacters: DiscreteSymbologySymbol[][] = text
+function _encodeContent(text: string, fallbackChar: string): TwoWidthSymbologySymbol[] {
+	const encodedCharacters: TwoWidthSymbologySymbol[][] = text
 		.toUpperCase()
 		.split("")
 		.map(character => (Mapping[character] ? Mapping[character] : Mapping[fallbackChar]))
 
-	const encodedIncludingSeparators: DiscreteSymbologySymbol[][] = encodedCharacters.map(encodedCharacter => [
+	const encodedIncludingSeparators: TwoWidthSymbologySymbol[][] = encodedCharacters.map(encodedCharacter => [
 		...encodedCharacter,
 		NARROW_SPACE,
 	])
 
-	const flattened: DiscreteSymbologySymbol[] = Array.prototype.concat.apply([], encodedIncludingSeparators)
+	const flattened: TwoWidthSymbologySymbol[] = Array.prototype.concat.apply([], encodedIncludingSeparators)
 
 	return flattened
 }
 
-export function encodeCode39(text: string, fallbackChar: string = "-"): Barcode<DiscreteSymbologySymbol> {
+export function encodeCode39(text: string, fallbackChar: string = "-"): Barcode<TwoWidthSymbologySymbol> {
 	if (!Mapping.hasOwnProperty(fallbackChar)) {
 		fallbackChar = "-"
 	}
 
-	const encodedContent: DiscreteSymbologySymbol[] = _encodeContent(text, fallbackChar)
-	const encoded: DiscreteSymbologySymbol[] = [...Mapping["*"], NARROW_SPACE, ...encodedContent, ...Mapping["*"]]
+	const encodedContent: TwoWidthSymbologySymbol[] = _encodeContent(text, fallbackChar)
+	const encoded: TwoWidthSymbologySymbol[] = [...Mapping["*"], NARROW_SPACE, ...encodedContent, ...Mapping["*"]]
 
 	return {
 		encoded,
