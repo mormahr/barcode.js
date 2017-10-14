@@ -1,10 +1,10 @@
 // @flow
-import { WIDE_BAR, NARROW_BAR, WIDE_SPACE, NARROW_SPACE } from "../Core/Characters"
-import type { DiscreteSymbologySymbol } from "../Core/Characters"
 import type { Barcode } from "../Core/Barcode"
+import type { DiscreteSymbologySymbol } from "../Core/Characters"
+import { NARROW_BAR, NARROW_SPACE, WIDE_BAR, WIDE_SPACE } from "../Core/Characters"
 
 // See https://en.wikipedia.org/wiki/Code_39
-export const Mapping = {}
+export const Mapping: { [key: string]: DiscreteSymbologySymbol[] } = {}
 const BaseMapping = {}
 const Bars = [
 	[
@@ -158,7 +158,7 @@ function map() {
 		}
 		reduction.push(Bars[bar][Bars[bar].length - 1])
 
-		Mapping[key] = reduction.join("")
+		Mapping[key] = reduction
 	}
 }
 
@@ -175,7 +175,7 @@ Mapping["+"] = [
 	NARROW_BAR,
 	WIDE_SPACE,
 	NARROW_BAR,
-].join("")
+]
 
 Mapping["/"] = [
 	NARROW_BAR,
@@ -187,7 +187,7 @@ Mapping["/"] = [
 	NARROW_BAR,
 	WIDE_SPACE,
 	NARROW_BAR,
-].join("")
+]
 
 Mapping["$"] = [
 	NARROW_BAR,
@@ -199,7 +199,7 @@ Mapping["$"] = [
 	NARROW_BAR,
 	NARROW_SPACE,
 	NARROW_BAR,
-].join("")
+]
 
 Mapping["%"] = [
 	NARROW_BAR,
@@ -211,23 +211,29 @@ Mapping["%"] = [
 	NARROW_BAR,
 	WIDE_SPACE,
 	NARROW_BAR,
-].join("")
+]
+
+function _encodeContent(text: string, fallbackChar: string): DiscreteSymbologySymbol[] {
+	const encodedCharacters: DiscreteSymbologySymbol[] = text
+		.toUpperCase()
+		.split()
+		.map(character => (Mapping[character] ? Mapping[character] : Mapping[fallbackChar]))
+
+	const flattenedIncludingSeparators: DiscreteSymbologySymbol[] = encodedCharacters.map(encodedCharacter => [
+		...encodedCharacter,
+		NARROW_SPACE,
+	])
+
+	return flattenedIncludingSeparators
+}
 
 export function encodeCode39(text: string, fallbackChar: string = "-"): Barcode<DiscreteSymbologySymbol> {
 	if (!Mapping.hasOwnProperty(fallbackChar)) {
 		fallbackChar = "-"
 	}
 
-	const encoded =
-		Mapping["*"] +
-		NARROW_SPACE +
-		text
-			.toUpperCase()
-			.split("")
-			.map(it => (Mapping[it] ? Mapping[it] : Mapping[fallbackChar]))
-			.map(it => it + NARROW_SPACE)
-			.join("") +
-		Mapping["*"]
+	const encodedContent: DiscreteSymbologySymbol[] = _encodeContent(text, fallbackChar)
+	const encoded: DiscreteSymbologySymbol[] = [...Mapping["*"], NARROW_SPACE, ...encodedContent, ...Mapping["*"]]
 
 	return {
 		encoded,
