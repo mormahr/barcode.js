@@ -1,5 +1,7 @@
 // @flow
 import { WIDE_BAR, NARROW_BAR, WIDE_SPACE, NARROW_SPACE } from "../Core/Characters"
+import type {DiscreteSymbologySymbol} from "../Core/Characters"
+import type {Barcode} from "../Core/Barcode"
 
 // See https://en.wikipedia.org/wiki/Code_39
 export const Mapping = {}
@@ -211,12 +213,12 @@ Mapping["%"] = [
 	NARROW_BAR,
 ].join("")
 
-export function encodeCode39(text: string, fallbackChar: string = "-"): string {
+export function encodeCode39(text: string, fallbackChar: string = "-"): Barcode<DiscreteSymbologySymbol> {
 	if (!Mapping.hasOwnProperty(fallbackChar)) {
 		fallbackChar = "-"
 	}
 
-	return (
+	const encoded = (
 		Mapping["*"] +
 		NARROW_SPACE +
 		text
@@ -227,4 +229,9 @@ export function encodeCode39(text: string, fallbackChar: string = "-"): string {
 			.join("") +
 		Mapping["*"]
 	)
+
+	return {
+		encoded,
+		plainTextContent: text,
+	}
 }
