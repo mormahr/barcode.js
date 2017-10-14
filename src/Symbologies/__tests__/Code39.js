@@ -30,8 +30,8 @@ describe("encodeCode39", function() {
 	})
 
 	it("uppercases input strings", function() {
-		const code = encodeCode39("a").encoded.join("")
-		expect(code).not.toEqual(expect.stringContaining(Mapping["-"].join("")))
+		const code = encodeCode39("a").encoded
+		expect(code.slice(10, 19)).toEqual(Mapping["A"])
 	})
 
 	it("replaces out of range chars", function() {
