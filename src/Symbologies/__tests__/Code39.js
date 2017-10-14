@@ -25,7 +25,7 @@ describe("encodeCode39", function() {
 				.filter(it => it !== "*")
 				.sort()
 				.join(""),
-		).encoded.join("")
+		).encoded
 		expect(code).toMatchSnapshot()
 	})
 
@@ -51,7 +51,7 @@ describe("encodeCode39", function() {
 
 		Object.keys(Mapping).map(char => {
 			it(`matches the snapshot for '${char}'`, function() {
-				expect(Mapping[char].join("")).toMatchSnapshot()
+				expect(Mapping[char]).toMatchSnapshot()
 			})
 
 			it(`maps '${char}' to 5 bars`, function() {
