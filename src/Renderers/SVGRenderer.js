@@ -5,7 +5,9 @@ const NARROW_WIDTH = 1
 const WIDE_WIDTH = 3
 
 export function rect(x: number, wide: boolean, filled: boolean): string {
-	return `<rect x="${x}" y="0" width="${wide ? WIDE_WIDTH : NARROW_WIDTH}" height="1" fill="${filled ? "black" : "white"}"/>`
+	return `<rect x="${x}" y="0" width="${wide ? WIDE_WIDTH : NARROW_WIDTH}" height="1" fill="${filled
+		? "black"
+		: "white"}"/>`
 }
 
 export function renderBarcodeToSVG(input: string, { width, height }: { width?: number, height?: number } = {}): string {

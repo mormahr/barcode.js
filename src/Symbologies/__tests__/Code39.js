@@ -20,7 +20,12 @@ describe("encodeCode39", function() {
 	})
 
 	it("matches the snapshot for the full alphabet", function() {
-		const code = encodeCode39(Object.keys(Mapping).filter(it => it !== "*").sort().join(""))
+		const code = encodeCode39(
+			Object.keys(Mapping)
+				.filter(it => it !== "*")
+				.sort()
+				.join(""),
+		)
 		expect(code).toMatchSnapshot()
 	})
 
