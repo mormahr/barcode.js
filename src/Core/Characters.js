@@ -11,5 +11,5 @@ export const WIDE_SPACE: WideSpace = "w"
 export opaque type NarrowSpace = "n"
 export const NARROW_SPACE: NarrowSpace = "n"
 
-export type DiscreteSymbologySymbol = WideBar | NarrowBar | WideSpace | WideBar
+export type DiscreteSymbologySymbol = WideBar | NarrowBar | WideSpace | NarrowSpace
 export type SymbologySymbol = DiscreteSymbologySymbol
