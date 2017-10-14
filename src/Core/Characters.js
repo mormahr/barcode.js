@@ -12,3 +12,4 @@ export opaque type NarrowSpace = "n"
 export const NARROW_SPACE: NarrowSpace = "n"
 
 export opaque type DiscreteSymbologySymbol = WideBar | NarrowBar | WideSpace | WideBar
+export opaque type SymbologySymbol = DiscreteSymbologySymbol
