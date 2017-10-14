@@ -1,10 +1,11 @@
 // @flow
 import { NARROW_SPACE, WIDE_SPACE, NARROW_BAR, WIDE_BAR } from "../Core/Characters"
+import type { TwoWidthBarcode } from "../Core/Barcode"
 
-export function renderBarcodeToHTML(input: string, prefix: string = "bcjs"): string {
+export function renderBarcodeToHTML(input: TwoWidthBarcode, prefix: string = "bcjs"): string {
 	let html = ""
 
-	for (const char of input) {
+	for (const char of input.encoded) {
 		switch (char) {
 			case NARROW_SPACE:
 				html += `<i class="${prefix}-narrow ${prefix}-space"></i>`
