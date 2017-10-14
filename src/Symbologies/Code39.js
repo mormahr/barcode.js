@@ -214,17 +214,19 @@ Mapping["%"] = [
 ]
 
 function _encodeContent(text: string, fallbackChar: string): DiscreteSymbologySymbol[] {
-	const encodedCharacters: DiscreteSymbologySymbol[] = text
+	const encodedCharacters: DiscreteSymbologySymbol[][] = text
 		.toUpperCase()
 		.split("")
 		.map(character => (Mapping[character] ? Mapping[character] : Mapping[fallbackChar]))
 
-	const flattenedIncludingSeparators: DiscreteSymbologySymbol[] = encodedCharacters.map(encodedCharacter => [
+	const encodedIncludingSeparators: DiscreteSymbologySymbol[][] = encodedCharacters.map(encodedCharacter => [
 		...encodedCharacter,
 		NARROW_SPACE,
 	])
 
-	return flattenedIncludingSeparators
+	const flattened: DiscreteSymbologySymbol[] = Array.prototype.concat.apply([], encodedIncludingSeparators)
+
+	return flattened
 }
 
 export function encodeCode39(text: string, fallbackChar: string = "-"): Barcode<DiscreteSymbologySymbol> {
