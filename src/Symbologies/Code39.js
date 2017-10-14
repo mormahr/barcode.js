@@ -216,7 +216,7 @@ Mapping["%"] = [
 function _encodeContent(text: string, fallbackChar: string): DiscreteSymbologySymbol[] {
 	const encodedCharacters: DiscreteSymbologySymbol[] = text
 		.toUpperCase()
-		.split()
+		.split("")
 		.map(character => (Mapping[character] ? Mapping[character] : Mapping[fallbackChar]))
 
 	const flattenedIncludingSeparators: DiscreteSymbologySymbol[] = encodedCharacters.map(encodedCharacter => [
