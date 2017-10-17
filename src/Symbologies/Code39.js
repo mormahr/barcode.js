@@ -1,8 +1,10 @@
 // @flow
-import { WIDE_BAR, NARROW_BAR, WIDE_SPACE, NARROW_SPACE } from "../Core/Characters"
+import type { Barcode, TwoWidthBarcode } from "../Core/Barcode"
+import type { TwoWidthSymbologySymbol } from "../Core/Characters"
+import { NARROW_BAR, NARROW_SPACE, WIDE_BAR, WIDE_SPACE } from "../Core/Characters"
 
 // See https://en.wikipedia.org/wiki/Code_39
-export const Mapping = {}
+export const Mapping: { [key: string]: TwoWidthSymbologySymbol[] } = {}
 const BaseMapping = {}
 const Bars = [
 	[
@@ -156,7 +158,7 @@ function map() {
 		}
 		reduction.push(Bars[bar][Bars[bar].length - 1])
 
-		Mapping[key] = reduction.join("")
+		Mapping[key] = reduction
 	}
 }
 
@@ -173,7 +175,7 @@ Mapping["+"] = [
 	NARROW_BAR,
 	WIDE_SPACE,
 	NARROW_BAR,
-].join("")
+]
 
 Mapping["/"] = [
 	NARROW_BAR,
@@ -185,7 +187,7 @@ Mapping["/"] = [
 	NARROW_BAR,
 	WIDE_SPACE,
 	NARROW_BAR,
-].join("")
+]
 
 Mapping["$"] = [
 	NARROW_BAR,
@@ -197,7 +199,7 @@ Mapping["$"] = [
 	NARROW_BAR,
 	NARROW_SPACE,
 	NARROW_BAR,
-].join("")
+]
 
 Mapping["%"] = [
 	NARROW_BAR,
@@ -209,22 +211,34 @@ Mapping["%"] = [
 	NARROW_BAR,
 	WIDE_SPACE,
 	NARROW_BAR,
-].join("")
+]
 
-export function encodeCode39(text: string, fallbackChar: string = "-"): string {
+function _encodeContent(text: string, fallbackChar: string): TwoWidthSymbologySymbol[] {
+	const encodedCharacters: TwoWidthSymbologySymbol[][] = text
+		.toUpperCase()
+		.split("")
+		.map(character => (Mapping[character] ? Mapping[character] : Mapping[fallbackChar]))
+
+	const encodedIncludingSeparators: TwoWidthSymbologySymbol[][] = encodedCharacters.map(encodedCharacter => [
+		...encodedCharacter,
+		NARROW_SPACE,
+	])
+
+	const flattened: TwoWidthSymbologySymbol[] = Array.prototype.concat.apply([], encodedIncludingSeparators)
+
+	return flattened
+}
+
+export function encodeCode39(text: string, fallbackChar: string = "-"): TwoWidthBarcode {
 	if (!Mapping.hasOwnProperty(fallbackChar)) {
 		fallbackChar = "-"
 	}
 
-	return (
-		Mapping["*"] +
-		NARROW_SPACE +
-		text
-			.toUpperCase()
-			.split("")
-			.map(it => (Mapping[it] ? Mapping[it] : Mapping[fallbackChar]))
-			.map(it => it + NARROW_SPACE)
-			.join("") +
-		Mapping["*"]
-	)
+	const encodedContent: TwoWidthSymbologySymbol[] = _encodeContent(text, fallbackChar)
+	const encoded: TwoWidthSymbologySymbol[] = [...Mapping["*"], NARROW_SPACE, ...encodedContent, ...Mapping["*"]]
+
+	return {
+		encoded,
+		plainTextContent: text,
+	}
 }
